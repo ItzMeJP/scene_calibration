@@ -3,6 +3,8 @@
 */.idea
 /.idea
 */docs/sphinx
+*/cmake-build-debug
+
 
 # ignore all logs
 *.log
