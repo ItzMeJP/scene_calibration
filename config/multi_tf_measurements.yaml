@@ -1,0 +1,5 @@
+operation_mode: 1
+parent_frame: 'usb_cam'
+child_frame: 'fiducial_17'
+num_samples: 4
+target_frames: ['target_frame0', 'target_frame1', 'target_frame2']

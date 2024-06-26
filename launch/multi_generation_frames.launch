@@ -1,0 +1,20 @@
+<launch>
+    <arg name="camera_image_topic" default="/usb_cam/image_raw"/>
+    <arg name="camera_info_topic" default="/usb_cam/camera_info"/>
+
+    <include file="$(find scene_calibration)/launch/run_usb_cam.launch">
+        <arg name="open_image_view" value="false"/>
+        <arg name="video_device" default="/dev/video0"/>
+    </include>
+
+    <!--node pkg="tf" type="static_transform_publisher" name="map_to_cam" args="0 0 0 0 0 0 1 map usb_cam 100" /-->
+
+    <include file="$(find scene_calibration)/launch/run_aruco_detector.launch">
+        <arg name="camera_image_topic" default="/usb_cam/image_raw"/>
+        <arg name="camera_info_topic" default="/usb_cam/camera_info"/>
+    </include>
+
+    <node pkg="scene_calibration" type="main.py" name="tf_measurement_node" output="screen">
+        <rosparam file="$(find scene_calibration)/config/multi_tf_measurements.yaml" command="load"/>
+    </node>
+</launch>

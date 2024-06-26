@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="measurement_tf_1718636066787340879" args="-0.036722 0.038493 0.189605 -0.02239 -0.02496 -0.021902 0.999198 table 0_plane 100" />
+  <node pkg="tf" type="static_transform_publisher" name="measurement_tf_1718636066787369251" args="-0.01242 0.022383 -0.008984 0.017413 0.008943 -0.021724 0.999572 table 1_plane 100" />
+</launch>

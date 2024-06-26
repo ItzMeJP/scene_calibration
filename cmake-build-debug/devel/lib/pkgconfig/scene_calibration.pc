@@ -1,0 +1,8 @@
+prefix=/home/joaopedro/ros_ws/ws_calibrations/src/scene_calibration/cmake-build-debug/devel
+
+Name: scene_calibration
+Description: Description of scene_calibration
+Version: 0.0.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

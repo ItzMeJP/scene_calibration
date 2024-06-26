@@ -1,0 +1,7 @@
+operation_mode: 2
+parent_frame: 'usb_cam'
+child_frame: 'fiducial_17'
+num_samples: 4
+target_frames: ['table']
+planes: ['0_plane', '1_plane']
+plane_z_offset: 0.1

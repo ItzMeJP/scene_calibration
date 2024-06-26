@@ -1,0 +1,26 @@
+<launch>
+
+  <arg name="camera_image_topic" default="/usb_cam/image_raw"/>
+  <arg name="camera_info_topic" default="/usb_cam/camera_info"/>
+
+  <node pkg="aruco_detect" name="aruco_detect" type="aruco_detect" respawn="false">
+		<param name="publish_images" value="true" />
+		<param name="fiducial_len" value="0.07"/>
+		<param name="dictionary" value="0"/>
+		<param name="do_pose_estimation" value="true"/>
+		<param name="publish_fiducial_tf" value="true"/>
+		<param name="use_static_tf_broadcaster" value="true"/>
+		<param name="minimum_time_between_detections_in_seconds" value="0.1"/>
+    <!-- If vis_msgs set to true, pose estimation will be published with ROS standard vision_msgs -->
+		<param name="vis_msgs" value="false"/>
+		<param name="ignore_fiducials" value=""/>
+		<param name="fiducial_len_override" value=""/>
+		<param name="verbose" value="false"/>
+		<remap from="camera" to="$(arg camera_image_topic)"/>
+		<remap from="camera_info" to="$(arg camera_info_topic)"/>
+	</node>
+
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find scene_calibration)/rviz/rviz_aruco.rviz"/>/>
+
+</launch>

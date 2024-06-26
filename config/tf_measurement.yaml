@@ -1,0 +1,7 @@
+operation_mode: 0  # generate single frame mode
+parent_frame: 'usb_cam' #parent frame of the target frame
+child_frame: 'fiducial_17' #name of the target frame
+num_samples: 10  #number of acquisition samples to estimate the frame
+delay_between_samples: 0.5 #the acquisition delay between samples
+timeout: 5 # timeout, in seconds waiting to the measurement frame
+target_frames: ['table'] #overide to target frame name. This name is used in the export file.

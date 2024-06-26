@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="measurement_tf_1718636066759157180" args="0.106086 0.042098 0.456883 0.012569 -0.861951 0.059344 0.503344 usb_cam table 100" />
+</launch>
