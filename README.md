@@ -42,7 +42,7 @@ For the usage cases bellow, it was used the Aruco Marker ID 17 with length of 0.
 This mode uses a target frame (in this example the fiducial17 of Aruco) to be measured. Afterwards, the output is exported in a launch file format with the target frame name override.
 1. Launch the generate_frame.launch
 ```
-roslaunch scene_calibration generate_frame.launch
+roslaunch scene_calibration generate_frame.launch use_default_cam:=true
 ```
 
 2. Put the aruco on the place where the frame should be.
@@ -54,7 +54,7 @@ roslaunch scene_calibration generate_frame.launch
 This mode uses a target frame (in this example the fiducial17 of Aruco) to be measured several times. Afterwards, the output is exported in a launch file format with the target frame name override. In this file, the second and the third frames will be related to the first one.
 1. Launch the multi_generation_frames.launch
 ```
-roslaunch scene_calibration multi_generation_frames.launch
+roslaunch scene_calibration multi_generation_frames.launch use_default_cam:=true
 ```
 
 2. Put the aruco on the place where the first frame should be.
@@ -71,7 +71,7 @@ This mode uses a target frame (in this example the fiducial17 of Aruco) to be me
 
 2. Launch the multi_planes_measurements.launch
 ```
-roslaunch scene_calibration multi_planes_measurements.launch
+roslaunch scene_calibration multi_planes_measurement.launch use_default_cam:=true
 ```
 
 2. Put the aruco on the place where the master frame should be.

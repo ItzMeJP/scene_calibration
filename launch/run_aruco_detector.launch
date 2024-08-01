@@ -3,7 +3,7 @@
   <arg name="camera_image_topic" default="/usb_cam/image_raw"/>
   <arg name="camera_info_topic" default="/usb_cam/camera_info"/>
 
-  <node pkg="aruco_detect" name="aruco_detect" type="aruco_detect" respawn="false">
+  <node pkg="aruco_detect" name="aruco_detect" type="aruco_detect" respawn="false"  clear_params="true" >
 		<param name="publish_images" value="true" />
 		<param name="fiducial_len" value="0.07"/>
 		<param name="dictionary" value="0"/>

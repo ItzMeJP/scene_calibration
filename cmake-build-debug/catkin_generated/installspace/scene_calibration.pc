@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: scene_calibration
-Description: Description of scene_calibration
-Version: 0.0.2
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

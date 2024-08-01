@@ -1,9 +1,9 @@
 #ignore specific subfolders
-*/cmake-build-debug
+/cmake-build-debug
 */.idea
 /.idea
 */docs/sphinx
-*/cmake-build-debug
+
 
 
 # ignore all logs

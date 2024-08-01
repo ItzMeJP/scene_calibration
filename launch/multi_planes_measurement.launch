@@ -1,13 +1,21 @@
 <launch>
 
 
+    <arg name="use_default_cam" default="false"/>
+    <arg name="use_photoneo" default="false"/>
+
     <arg name="camera_image_topic" default="/usb_cam/image_raw"/>
     <arg name="camera_info_topic" default="/usb_cam/camera_info"/>
 
-    <include file="$(find scene_calibration)/launch/run_usb_cam.launch">
+    <include file="$(find scene_calibration)/launch/run_usb_cam.launch" if="$(arg use_default_cam)">
         <arg name="open_image_view" value="false"/>
         <arg name="video_device" default="/dev/video0"/>
     </include>
+
+    <group if="$(arg use_photoneo)">
+        <include file="$(find device_demos)/launch/sensors/photoneo_s/phoxi_camera_2019-04-003-LC3.launch"/>
+        <include file="$(find device_demos)/launch/sensors/photoneo_s/run.launch"/>
+    </group>
 
     <!--node pkg="tf" type="static_transform_publisher" name="map_to_cam" args="0 0 0 0 0 0 1 map usb_cam 100" /-->
 

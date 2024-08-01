@@ -62,7 +62,7 @@ def main():
     rospy.init_node('plane_visualizer')
 
     # Lendo a string YAML do servidor de parâmetros
-    data = rospy.get_param('/plane_data')
+    data = rospy.get_param(rospy.get_name() +'/plane_data')
 
     # Criando um objeto Rate
     rate = rospy.Rate(10)  # 10 Hz

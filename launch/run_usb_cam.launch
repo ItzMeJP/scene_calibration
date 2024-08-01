@@ -4,7 +4,7 @@
   <arg name="open_image_view" default="true"/>
   <arg name="camera_info_url" default="package://scene_calibration/config/usb_cam.yaml"/>
 
-  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen"  clear_params="true" >
     <param name="camera_info_url" value="$(arg camera_info_url)" />
     <param name="video_device" value="$(arg video_device)"/>
     <param name="image_width" value="640" />

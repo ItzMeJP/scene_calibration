@@ -1,9 +1,12 @@
 <launch>
-    <!-- Carregando os dados do plano do arquivo YAML para o servidor de parâmetros -->
-    <rosparam command="load" file="$(find scene_calibration)/output/output.yaml" param="plane_data"/>
+
 
     <!-- Iniciando o nó plane_visualizer -->
-    <node pkg="scene_calibration" type="verify_planes.py" name="plane_visualizer"/>
+    <node pkg="scene_calibration" type="verify_planes.py" name="plane_visualizer"  clear_params="true" >
+        <!-- Carregando os dados do plano do arquivo YAML para o servidor de parâmetros -->
+        <rosparam command="load" file="$(find scene_calibration)/output/output.yaml" param="plane_data"/>
+    </node>
+
 
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find scene_calibration)/rviz/rviz.rviz"/>/>
 
